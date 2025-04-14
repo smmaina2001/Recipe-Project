@@ -1,10 +1,11 @@
-import React from 'react';
-import RecipeList from '../components/RecipeList';
+import RecipeList from "../components/RecipeList";
+import SearchBar from "../components/SearchBar";
 
 function RecipesPage() {
   return (
     <div>
       <h1>All Recipes</h1>
+      <SearchBar />
       <RecipeList />
     </div>
   );

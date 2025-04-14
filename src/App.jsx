@@ -1,26 +1,23 @@
-// src/App.jsx
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import RecipesPage from './pages/RecipesPage';
-import RecipeDetailPage from './pages/RecipeDetailPage';
-import MyRecipesPage from './pages/MyRecipesPage';
-import CreateRecipePage from './pages/CreateRecipePage';
-import FavoritesPage from './pages/FavoritesPage';
-import Navbar from './components/Navbar';
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import RecipeList from "./components/RecipeList";
+import RecipeDetail from "./components/RecipeDetail";
+import RecipeForm from "./components/RecipeForm";
+import ReviewForm from "./components/ReviewForm";
+import SearchBar from "./components/SearchBar";
 
 function App() {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<RecipesPage />} />
-          <Route path="/recipes/:id" element={<RecipeDetailPage />} />
-          <Route path="/my-recipes" element={<MyRecipesPage />} />
-          <Route path="/create" element={<CreateRecipePage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<RecipeList />} />
+        <Route path="/recipes" element={<RecipeList />} />
+        <Route path="/recipes/:id" element={<RecipeDetail />} />
+        <Route path="/add-recipe" element={<RecipeForm />} />
+        <Route path="/review" element={<ReviewForm />} />
+        <Route path="/search" element={<SearchBar />} />
+      </Routes>
     </>
   );
 }

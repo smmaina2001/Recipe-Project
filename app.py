@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, session
-#from flask_cors import CORS
+from flask_cors import CORS
+
 from flask_migrate import Migrate
 from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
@@ -17,7 +18,10 @@ app.config['SESSION_TYPE'] = 'filesystem'
 
 db.init_app(app)
 bcrypt.init_app(app)
-#CORS(app)
+from flask_cors import CORS
+
+CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
+
 migrate = Migrate(app, db)
 api = Api(app)
 

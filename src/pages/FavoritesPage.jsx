@@ -1,10 +1,10 @@
-import React from 'react';
+import RecipeList from "../components/RecipeList";
 
 function FavoritesPage() {
   return (
     <div>
-      <h1>Favorite Recipes</h1>
-      {/* Display user's favorite recipes */}
+      <h1>My Favorite Recipes</h1>
+      <RecipeList filter="favorites" />
     </div>
   );
 }

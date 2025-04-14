@@ -1,12 +1,12 @@
-import React from 'react';
+import RecipeList from "../components/RecipeList";
 
-function MyRecipesPage() {
+function FavoritesPage() {
   return (
     <div>
-      <h1>My Recipes</h1>
-      {/* Add logic to fetch and display user's recipes */}
+      <h1>My Favorite Recipes</h1>
+      <RecipeList filter="favorites" />
     </div>
   );
 }
 
-export default MyRecipesPage;
+export default FavoritesPage;
